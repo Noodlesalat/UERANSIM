@@ -80,7 +80,7 @@ void UeTimer::start(const nas::IEGprsTimer3 &v, bool clearExpiryCount)
     m_interval = secs;
     m_startMillis = utils::CurrentTimeMillis();
     m_isRunning = true;
-    printf("NAS timer[%d] started", m_code);
+    printf("NAS timer[%d] started\n", m_code);
 }
 
 void UeTimer::stop(bool clearExpiryCount)
