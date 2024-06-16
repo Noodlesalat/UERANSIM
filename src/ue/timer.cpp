@@ -8,6 +8,8 @@
 
 #include "timer.hpp"
 
+#include <cstdio>
+
 #include <sstream>
 
 #include <utils/common.hpp>
@@ -39,6 +41,7 @@ void UeTimer::start(bool clearExpiryCount)
         resetExpiryCount();
     m_startMillis = utils::CurrentTimeMillis();
     m_isRunning = true;
+    printf("NAS timer[%d] started", m_code);
 }
 
 void UeTimer::start(const nas::IEGprsTimer2 &v, bool clearExpiryCount)
@@ -48,6 +51,7 @@ void UeTimer::start(const nas::IEGprsTimer2 &v, bool clearExpiryCount)
     m_interval = v.value;
     m_startMillis = utils::CurrentTimeMillis();
     m_isRunning = true;
+    printf("NAS timer[%d] started", m_code);
 }
 
 void UeTimer::start(const nas::IEGprsTimer3 &v, bool clearExpiryCount)
@@ -76,6 +80,7 @@ void UeTimer::start(const nas::IEGprsTimer3 &v, bool clearExpiryCount)
     m_interval = secs;
     m_startMillis = utils::CurrentTimeMillis();
     m_isRunning = true;
+    printf("NAS timer[%d] started", m_code);
 }
 
 void UeTimer::stop(bool clearExpiryCount)

@@ -10,7 +10,6 @@
 
 #include <lib/nas/ie4.hpp>
 #include <utils/json.hpp>
-
 class UeTimer
 {
   private:
